@@ -1,0 +1,8 @@
+.poster img {
+  transform: scale(0.9);
+  transition: all ease 0.3s;
+}
+
+.poster img:hover {
+  transform: scale(1);
+}
