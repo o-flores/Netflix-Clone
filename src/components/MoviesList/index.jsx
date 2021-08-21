@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import tmdb from '../../services/api';
 import MovieContainer from '../MovieContainer';
+import './style.css';
 
 function MoviesList() {
   const [moviesList, setMoviesList] = useState([]);
@@ -14,7 +15,7 @@ function MoviesList() {
     fetchHomeList();
   }, [])
   return (
-    <div>
+    <div className="category-container">
       { moviesList.length > 0 && moviesList.map((category) => {
         return <MovieContainer key={ category.slug } {...category} />
       }) }
