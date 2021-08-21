@@ -1,21 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import tmdb from './services/api'
+import MoviesList from './components/MoviesList';
 
 function App() {
 
-  useEffect(() => {
-    const fetchHomeList = async () => {
-      const list = await tmdb();
-      console.log(list);
-    }
-
-    fetchHomeList();
-  }, [])
-
   return (
     <div className="App">
-      Hello world!
+      <MoviesList />
     </div>
   );
 }
