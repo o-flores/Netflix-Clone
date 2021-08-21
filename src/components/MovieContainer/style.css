@@ -1,0 +1,35 @@
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-container:hover .navigate-prev,
+.carousel-container:hover .navigate-next {
+  opacity: 1;
+}
+
+
+.movieContainer {
+  display: flex;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.navigate-prev, .navigate-next {
+  font-size: 60px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.navigate-prev {
+  left: -10px;
+  z-index: 10;
+}
+
+
+.navigate-next {
+  right: 0;
+  z-index: 20;
+}
