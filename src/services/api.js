@@ -28,10 +28,20 @@ const getHomePageList = async () => {
       slug: 'drama-series',
       title: 'Séries drámaticas para maratonar',
       list: await fetchMoviesOrTvInfo(`${BASE_URL}/discover/tv?api_key=${API_KEY}&language=pt-BR&with_genres=18&with_watch_providers=8&watch_region=BR&sort_by=popularity.desc`),
+    },
+    {
+      slug: 'scifi-movies',
+      title: 'Geek',
+      list: await fetchMoviesOrTvInfo(`${BASE_URL}/discover/movie?api_key=${API_KEY}&language=pt-BR&with_genres=878&with_watch_providers=8&watch_region=BR&sort_by=popularity.desc`),
+    },
+    {
+      slug: 'comedy-series',
+      title: 'Séries de humor refinado',
+      list: await fetchMoviesOrTvInfo(`${BASE_URL}/discover/tv?api_key=${API_KEY}&language=pt-BR&with_genres=35&with_watch_providers=8&watch_region=BR&sort_by=popularity.desc`),
     }
   ]
 }
-//ID de series
+//ID de filmes
 // 0: {id: 28, name: "Ação"}
 // 1: {id: 12, name: "Aventura"}
 // 2: {id: 16, name: "Animação"}
@@ -51,5 +61,73 @@ const getHomePageList = async () => {
 // 16: {id: 53, name: "Thriller"}
 // 17: {id: 10752, name: "Guerra"}
 // 18: {id: 37, name: "Faroeste"}
+
+//ID de series
+// "genres": [
+//   {
+//     "id": 10759,
+//     "name": "Action & Adventure"
+//   },
+//   {
+//     "id": 16,
+//     "name": "Animação"
+//   },
+//   {
+//     "id": 35,
+//     "name": "Comédia"
+//   },
+//   {
+//     "id": 80,
+//     "name": "Crime"
+//   },
+//   {
+//     "id": 99,
+//     "name": "Documentário"
+//   },
+//   {
+//     "id": 18,
+//     "name": "Drama"
+//   },
+//   {
+//     "id": 10751,
+//     "name": "Família"
+//   },
+//   {
+//     "id": 10762,
+//     "name": "Kids"
+//   },
+//   {
+//     "id": 9648,
+//     "name": "Mistério"
+//   },
+//   {
+//     "id": 10763,
+//     "name": "News"
+//   },
+//   {
+//     "id": 10764,
+//     "name": "Reality"
+//   },
+//   {
+//     "id": 10765,
+//     "name": "Sci-Fi & Fantasy"
+//   },
+//   {
+//     "id": 10766,
+//     "name": "Soap"
+//   },
+//   {
+//     "id": 10767,
+//     "name": "Talk"
+//   },
+//   {
+//     "id": 10768,
+//     "name": "War & Politics"
+//   },
+//   {
+//     "id": 37,
+//     "name": "Faroeste"
+//   }
+// ]
 
 export default getHomePageList;
