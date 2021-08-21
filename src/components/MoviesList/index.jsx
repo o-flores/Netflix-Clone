@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import tmdb from '../../services/api';
-import MovieCard from '../MovieCard';
+import MovieContainer from '../MovieContainer';
 
 function MoviesList() {
   const [moviesList, setMoviesList] = useState([]);
@@ -15,8 +15,8 @@ function MoviesList() {
   }, [])
   return (
     <div>
-      { moviesList.length > 0 && moviesList.map((movie) => {
-        return <MovieCard key={ movie.slug } {...movie} />
+      { moviesList.length > 0 && moviesList.map((category) => {
+        return <MovieContainer key={ category.slug } {...category} />
       }) }
     </div>
   )
