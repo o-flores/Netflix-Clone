@@ -8,6 +8,7 @@ import { MdNavigateBefore } from 'react-icons/md';
 function MovieContainer({ title, list }) {
   const [scrollx, setScrollx] = useState(0);
   const posterWidth = 154;
+  const containerMargin = 50;
 
   function handlePrev() {
     let x = scrollx + Math.round(window.innerWidth / 2);
@@ -19,7 +20,7 @@ function MovieContainer({ title, list }) {
     let x = scrollx - Math.round(window.innerWidth / 2);
     const totalWidth = list.results.length * posterWidth;
     if ((window.innerWidth - totalWidth) > x) {
-      x = window.innerWidth - totalWidth - 60;
+      x = window.innerWidth - totalWidth - containerMargin * 2;
     }
     setScrollx(x);
   }
