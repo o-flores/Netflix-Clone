@@ -3,7 +3,7 @@ import './style.css';
 
 function MovieCard(props) {
   const BASE_URL = 'http://image.tmdb.org/t/p/';
-  const backdropPath = `${BASE_URL}w200${props.poster_path}`
+  const backdropPath = `${BASE_URL}w154${props.poster_path}`
   return (
     <div className="poster">
       <img

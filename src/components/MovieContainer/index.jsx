@@ -7,6 +7,7 @@ import { MdNavigateBefore } from 'react-icons/md';
 
 function MovieContainer({ title, list }) {
   const [scrollx, setScrollx] = useState(0);
+  const posterWidth = 154;
 
   function handlePrev() {
     let x = scrollx + Math.round(window.innerWidth / 2);
@@ -16,7 +17,7 @@ function MovieContainer({ title, list }) {
 
   function handleNext() {
     let x = scrollx - Math.round(window.innerWidth / 2);
-    const totalWidth = list.results.length * 200;
+    const totalWidth = list.results.length * posterWidth;
     if ((window.innerWidth - totalWidth) > x) {
       x = window.innerWidth - totalWidth - 60;
     }
@@ -24,7 +25,7 @@ function MovieContainer({ title, list }) {
   }
   return (
     <>
-      <h2>{ title }</h2>
+      <h2 className="category-title">{ title }</h2>
       <div 
         className="carousel-container"
         style={{ marginLeft: scrollx }}
