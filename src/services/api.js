@@ -1,6 +1,12 @@
 export const API_KEY = 'b4fc09155cbf6393b8bec5a42afae2a0';
 export const BASE_URL = 'https://api.themoviedb.org/3';
 
+export const searchMulti = async (query) => {
+  const endpoint = `${BASE_URL}/search/multi?api_key=${API_KEY}&language=pt-BR&query=${query}&region=BR`
+  const data = await fetchMoviesOrTvInfo(endpoint);
+  return data;
+}
+
 export const fetchMoviesOrTvInfo = async (endpoint) => {
   const response = await fetch(endpoint);
   const data = await response.json();
