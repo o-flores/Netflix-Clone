@@ -5,19 +5,19 @@ import { SearchContext } from '../../Contexts/SearchText';
 
 function SearchBar({ onClick, searchBar }) {
 
-  const context = useContext(SearchContext);
+  const { setSearchText, searchText } = useContext(SearchContext);
 
-  useEffect(() => {
-    const clickListener = () => {
-      if (searchBar) onClick(false);
-    }
+  // useEffect(() => {
+  //   const clickListener = () => {
+  //     if (searchBar) onClick(false);
+  //   }
     
-    window.addEventListener('click', clickListener);
+  //   window.addEventListener('click', clickListener);
 
-    return () => {
-      window.removeEventListener('click', clickListener);
-    }
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('click', clickListener);
+  //   }
+  // }, []);
 
   return (
     <div className="searchInput">
@@ -31,6 +31,8 @@ function SearchBar({ onClick, searchBar }) {
           placeholder="Títulos, gente e gêneros"
           name="searchInput"
           id="searchInput"
+          onChange={ ({ target }) => setSearchText(target.value) }
+          value={ searchText }
         />
       </label>
     </div>
