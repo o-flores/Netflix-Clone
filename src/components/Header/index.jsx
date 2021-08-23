@@ -4,9 +4,11 @@ import './style.css';
 import { MdSearch } from 'react-icons/md';
 import { MdNotificationsNone } from 'react-icons/md';
 import avatar from '../../images/avatar.png';
+import SearchBar from '../SearchBar';
 
 function Header() {
   const [blackHeader, setBlackHeader] = useState(false);
+  const [searchBar, setSearchBar] = useState(false);
 
   useEffect(() => {
     const scrollListener = () => {
@@ -36,7 +38,8 @@ function Header() {
           <a href="/">Minha Lista</a>
         </div>
         <div className="right-header">
-          <MdSearch className="search-icon" />
+          { !searchBar && <MdSearch onClick={ () => setSearchBar(!searchBar) } className="search-icon" />}
+          { searchBar && <SearchBar onClick={ setSearchBar } searchBar={ searchBar } />}
           <MdNotificationsNone className="notification-icon" />
           <img src={ avatar } alt="Netflix Avatar" />
         </div>
