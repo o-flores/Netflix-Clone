@@ -1,0 +1,27 @@
+.searchInput {
+  display: flex;
+  border: 1px solid #fff;
+  background: rgba(0,0,0,.75);
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+}
+
+.searchInput input {
+  background: transparent;
+  border: none;
+  padding: 7px 14px 7px 7px;
+  width: 212px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.searchInput input::placeholder {
+  color: #b3b3b3;
+}
+
+
+.icon-search {
+  font-size: 1.8rem;
+  margin: 0 0.2rem
+}
