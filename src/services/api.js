@@ -1,13 +1,13 @@
-const API_KEY = 'b4fc09155cbf6393b8bec5a42afae2a0';
-const BASE_URL = 'https://api.themoviedb.org/3';
+export const API_KEY = 'b4fc09155cbf6393b8bec5a42afae2a0';
+export const BASE_URL = 'https://api.themoviedb.org/3';
 
-const fetchMoviesOrTvInfo = async (endpoint) => {
+export const fetchMoviesOrTvInfo = async (endpoint) => {
   const response = await fetch(endpoint);
   const data = await response.json();
   return data;
 }
 
-const getHomePageList = async () => {
+export const getHomePageList = async () => {
   return [
     {
       slug: 'movie-originals',
@@ -129,5 +129,3 @@ const getHomePageList = async () => {
 //     "name": "Faroeste"
 //   }
 // ]
-
-export default getHomePageList;
