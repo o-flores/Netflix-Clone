@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import './style.css';
 import { MdSearch } from 'react-icons/md';
+import { SearchContext } from '../../Contexts/SearchText';
 
 function SearchBar({ onClick, searchBar }) {
+
+  const context = useContext(SearchContext);
 
   useEffect(() => {
     const clickListener = () => {
