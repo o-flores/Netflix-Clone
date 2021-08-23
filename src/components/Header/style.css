@@ -31,7 +31,7 @@ header {
 
 .left-header a {
   text-decoration: none;
-  color: white;
+  color: #b3b3b3;
   margin-right: 25px;
   font-size: 14px;
   font-weight: bold;
@@ -44,7 +44,7 @@ header {
 }
 
 .search-icon {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-right: 25px;
   cursor: pointer;
 }
