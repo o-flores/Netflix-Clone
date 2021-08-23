@@ -4,18 +4,20 @@ import MoviesList from './components/MoviesList';
 import Header from './components/Header';
 import FeaturedMovie from './components/FeaturedMovie';
 import { SearchContext } from './Contexts/SearchText';
+import SearchList from './components/SearchList';
 
 function App() {
   const { searchText } = useContext(SearchContext);
-  console.log(searchText.length);
   return (
     <div className="App">
       <Header />
-      {searchText.length === 0 && (
+      {searchText.length === 0 ? (
         <>
           <FeaturedMovie />
           <MoviesList />
         </>
+      ) : (
+        <SearchList />
       )}
     </div>
   );
