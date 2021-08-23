@@ -10,6 +10,13 @@ function FeaturedMovie() {
   const [featuredTv, setfeaturedTv] = useState([]);
   const [featuredTvInfo, setfeaturedTvInfo] = useState([]);
 
+  let overview = featuredTvInfo.overview;
+  if (featuredTvInfo.overview) {
+    if (featuredTvInfo.overview.length > 200) {
+      overview = featuredTvInfo.overview.substr(0, 200) + '...';
+    }
+  }
+
 
   useEffect(() => {
     const numberOfInfoPerPage = 20;
@@ -29,8 +36,6 @@ function FeaturedMovie() {
     if (featuredTv.length !== 0) fetchDetailsTvInfo();
   }, [featuredTv]);
 
-  console.log(featuredTv);
-
   return (
     <div
       className="featured"
@@ -47,7 +52,7 @@ function FeaturedMovie() {
               <h1>{featuredTv.original_name}</h1>
             </div>
             <div className="overview">
-              <p>{featuredTvInfo.overview}</p>
+              <p>{overview}</p>
             </div>
             <div className="buttons">
               <button className="play-btn">
