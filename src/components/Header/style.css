@@ -1,11 +1,17 @@
+header {
+  position: fixed;
+  width: 100vw;
+  height: 70px;
+  z-index: 999;
+  background:  rgb(20, 20, 20);
+  padding-top: 15px;
+}
+
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 50px;
-  position: fixed;
-  height: 70px;
-  width: 90vw;
+  margin: 0 50px 10px;
 }
 
 .left-header {
