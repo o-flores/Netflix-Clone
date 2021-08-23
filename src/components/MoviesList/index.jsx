@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import tmdb from '../../services/api';
+import { getHomePageList } from '../../services/api';
 import MovieContainer from '../MovieContainer';
 import './style.css';
 
@@ -8,7 +8,7 @@ function MoviesList() {
 
   useEffect(() => {
     const fetchHomeList = async () => {
-      const list = await tmdb();
+      const list = await getHomePageList();
       setMoviesList(list);
     }
 
