@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../../images/netflixLogo.png';
 import './style.css';
 import { MdSearch } from 'react-icons/md';
 import { MdNotificationsNone } from 'react-icons/md';
 import avatar from '../../images/avatar.png';
 
-
 function Header() {
+  const [blackHeader, setBlackHeader] = useState(false);
+
+  useEffect(() => {
+    const scrollListener = () => {
+     if (window.scrollY > 20) setBlackHeader(true);
+     else setBlackHeader(false)
+    }
+    window.addEventListener('scroll', scrollListener);
+
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    }
+  }, []);
+
   return(
-    <header>
+    <header className={ blackHeader ? 'black-header' : '' }>
       <div className="header-container">
         <div className="left-header">
           <div className="logo">
