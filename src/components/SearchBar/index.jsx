@@ -7,17 +7,19 @@ function SearchBar({ onClick, searchBar }) {
 
   const { setSearchText, searchText } = useContext(SearchContext);
 
-  // useEffect(() => {
-  //   const clickListener = () => {
-  //     if (searchBar) onClick(false);
-  //   }
+  useEffect(() => {
+    const clickListener = ({ target }) => {
+      const input = document.getElementById('searchInput');
+      if(target === input) return;
+      onClick(false);
+    }
     
-  //   window.addEventListener('click', clickListener);
+    window.addEventListener('click', clickListener);
 
-  //   return () => {
-  //     window.removeEventListener('click', clickListener);
-  //   }
-  // }, []);
+    return () => {
+      window.removeEventListener('click', clickListener);
+    }
+  }, []);
 
   return (
     <div className="searchInput">
