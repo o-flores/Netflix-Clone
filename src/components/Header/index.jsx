@@ -39,7 +39,7 @@ function Header() {
         </div>
         <div className="right-header">
           { !searchBar && <MdSearch onClick={ () => setSearchBar(!searchBar) } className="search-icon" />}
-          { searchBar && <SearchBar onClick={ setSearchBar } searchBar={ searchBar } />}
+          { searchBar && <SearchBar onClick={ setSearchBar } />}
           <MdNotificationsNone className="notification-icon" />
           <img src={ avatar } alt="Netflix Avatar" />
         </div>
