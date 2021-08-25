@@ -3,28 +3,39 @@ import './style.css';
 import { MdSearch } from 'react-icons/md';
 import { SearchContext } from '../../Contexts/SearchText';
 
-function SearchBar({ onClick, searchBar }) {
+function SearchBar({ onClick }) {
 
   const { setSearchText, searchText } = useContext(SearchContext);
 
+  
   useEffect(() => {
     const clickListener = ({ target }) => {
       const input = document.getElementById('searchInput');
       if(target === input) return;
-      onClick(false);
+      handleSearchClick();
+      setTimeout(() => {
+        onClick(false);
+      }, 500);
     }
     
     window.addEventListener('click', clickListener);
 
     return () => {
       window.removeEventListener('click', clickListener);
+      clearTimeout();
     }
   }, []);
+
+  function handleSearchClick() {
+    const div = document.getElementsByClassName('searchInput')[0];
+    div.classList.add('fade-out');
+  }
+
 
   return (
     <div className="searchInput">
       <MdSearch
-        onClick={ () => onClick(!searchBar) }
+        onClick={ handleSearchClick }
         className="icon-search"
       />
       <label htmlFor="searchInput">

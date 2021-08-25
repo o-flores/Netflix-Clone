@@ -5,6 +5,21 @@
   align-items: center;
   justify-content: center;
   margin-right: 2rem;
+  animation: toLeft normal 0.5s;
+}
+
+.fade-out {
+  animation: toRight normal 0.5s;
+}
+
+@keyframes toLeft {
+  from { width: 0; }
+  to { width: 230px; }
+}
+
+@keyframes toRight {
+  from { width: 230px; }
+  to { width: 0; }
 }
 
 .searchInput input {
@@ -14,6 +29,7 @@
   width: 212px;
   font-size: 14px;
   color: #fff;
+  width: 100%;
 }
 
 .searchInput input::placeholder {
